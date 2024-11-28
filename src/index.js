@@ -2,12 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { PayPalScriptProvider } from '@paypal/react-paypal-js';
+import { Provider } from 'react-redux';
+import store from './store';
 import reportWebVitals from './reportWebVitals';
+
+const paypalOptions = {
+  "client-id": "your_paypal_client_id",
+  currency: "EUR",
+};
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <PayPalScriptProvider options={paypalOptions}>
+        <App />
+      </PayPalScriptProvider>
+    </Provider>
   </React.StrictMode>
 );
 
