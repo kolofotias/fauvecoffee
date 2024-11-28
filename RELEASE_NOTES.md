@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [2024-11-28]
-- Initialize project using Create React App- Readme & Auto-Updated Release Notes- Removed child folder
+- React App- Initialize project using Create React App- Readme & Auto-Updated Release Notes- Removed child folder
 ## [1.0.0] - 2024-03-19
 
 ### Added

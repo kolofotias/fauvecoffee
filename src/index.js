@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 import { Provider } from 'react-redux';
+import { ColorModeScript } from '@chakra-ui/react';
+import theme from './theme';
 import store from './store';
 import reportWebVitals from './reportWebVitals';
 
@@ -15,6 +17,7 @@ const paypalOptions = {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <ColorModeScript initialColorMode={theme.config.initialColorMode} />
     <Provider store={store}>
       <PayPalScriptProvider options={paypalOptions}>
         <App />

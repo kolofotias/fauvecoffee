@@ -1,4 +1,5 @@
 import { extendTheme } from '@chakra-ui/react';
+import { mode } from '@chakra-ui/theme-tools';
 
 const config = {
   initialColorMode: 'light',
@@ -18,8 +19,8 @@ const colors = {
 const styles = {
   global: (props) => ({
     body: {
-      bg: props.colorMode === 'light' ? 'white' : 'gray.800',
-      color: props.colorMode === 'light' ? 'gray.800' : 'white',
+      bg: mode('white', 'gray.800')(props),
+      color: mode('gray.800', 'white')(props),
     },
   }),
 };
@@ -32,10 +33,10 @@ const components = {
     },
     variants: {
       solid: (props) => ({
-        bg: props.colorMode === 'light' ? 'brand.purple' : 'brand.pink',
+        bg: mode('brand.purple', 'brand.pink')(props),
         color: 'white',
         _hover: {
-          bg: props.colorMode === 'light' ? 'brand.blue' : 'brand.purple',
+          bg: mode('brand.blue', 'brand.purple')(props),
         },
       }),
     },
